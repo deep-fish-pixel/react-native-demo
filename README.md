@@ -13,5 +13,5 @@
 
 [ios](https://github.com/maweimaweima/react-native-demo/blob/master/asset/ios.gif)
 
-[android](https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
+[android](https://github.com/maweimaweima/react-native-demo/blob/master/asset/android2.gif)
 
