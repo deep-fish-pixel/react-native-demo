@@ -14,3 +14,5 @@
 (https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
 
 (https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
+![NewtonCradleLoading](https://github.com/yankai-victor/Loading/blob/master/images/NewtonCradleLoading.gif)
+
