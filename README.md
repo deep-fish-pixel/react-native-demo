@@ -8,3 +8,7 @@
 
     1.ios和android下拉刷新功能，调用时差异非常大，但封装后实现统一组件化在Page中，简单又方便
     2...
+    
+效果
+https://github.com/maweimaweima/react-native-demo/asset/ios.gif
+https://github.com/maweimaweima/react-native-demo/asset/android.gif
