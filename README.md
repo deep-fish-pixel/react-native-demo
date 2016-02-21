@@ -12,5 +12,6 @@
 效果
 
 ![ios](https://github.com/maweimaweima/react-native-demo/blob/master/asset/ios.gif)
+
 ![ios](https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
 
