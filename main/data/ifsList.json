@@ -1,0 +1,53 @@
+{
+  "total": 10,
+  "lists": [
+    {
+      "btnStatus": "02",
+      "id": 2,
+      "btnName": "暂停销售",
+      "promotionMark": "",
+      "rate": "6.90",
+      "productCode": "PC1112",
+      "adviseHold": "0",
+      "btnUrl": "/ifs/app/insBuy/buyHome.htm",
+      "productName": "产品名2",
+      "introduction": "珠江人寿"
+    },
+    {
+      "btnStatus": "01",
+      "id": 1,
+      "btnName": "立即购买",
+      "promotionMark": "促销标签",
+      "rate": "8.18",
+      "productCode": "PC1111",
+      "adviseHold": "6",
+      "btnUrl": "/ifs/app/insBuy/buyHome.htm",
+      "productName": "丁建雄测试产品01",
+      "introduction": "产品简介"
+    },
+    {
+      "btnStatus": "02",
+      "id": 2,
+      "btnName": "暂停销售",
+      "promotionMark": "",
+      "rate": "6.90",
+      "productCode": "PC1112",
+      "adviseHold": "0",
+      "btnUrl": "/ifs/app/insBuy/buyHome.htm",
+      "productName": "产品名2",
+      "introduction": "珠江人寿"
+    },
+    {
+      "btnStatus": "01",
+      "id": 1,
+      "btnName": "立即购买",
+      "promotionMark": "促销标签",
+      "rate": "8.18",
+      "productCode": "PC1111",
+      "adviseHold": "6",
+      "btnUrl": "/ifs/app/insBuy/buyHome.htm",
+      "productName": "丁建雄测试产品01",
+      "introduction": "产品简介"
+    }
+  ]
+}

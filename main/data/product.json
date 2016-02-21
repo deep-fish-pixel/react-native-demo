@@ -1,0 +1,52 @@
+{
+"activeFlag": true,
+"adviseHold": 1,
+"adviseHoldName": "1年",
+"adviseHoldUnit": "02",
+"authFlag": true,
+"defaultRegion": [
+  {
+  "code": "110000",
+  "id": 2,
+  "ismunicipality": false,
+  "name": "北京"
+  },
+  {
+  "code": "110000",
+  "id": 36,
+  "ismunicipality": false,
+  "name": "全境"
+  }
+],
+"hiddenMobile": "137******62",
+"id": 15,
+"idCard": "3****************1",
+"introduction": "1年后任意时间领取无手续费",
+"isLimit": false,
+"isSuccess": true,
+"mobile": "13739186162",
+"name": "马*",
+"period": "5年",
+"productName": "富德生命聚财宝A款两全保险",
+"promotionMark": "特别推荐",
+"protocol": [
+{
+"tabName": "产品条款",
+"url": "http://sale.suning.com/jr/FDSMclause/index.html"
+},
+{
+"tabName": "余额理财服务协议",
+"url": "http://sale.suning.com/jr/LQBagreement/index.html"
+}
+],
+"rate": "6.50",
+"saleStatus": "03",
+"singleAmount": "1000.00",
+"singleLimitCopies": 199,
+"snAddressUrl": "https://lcifs.suning.com/ifs/regionQuery/LCAddressQueryCmd.htm",
+"startBuyCopies": 1,
+"successInfoUrl": "https://lcifs.suning.com/ifs/app/insBuy/queryOrderInfo.htm",
+"timeLimitInfo": "23:00至次日01:00暂停购买",
+"underWriteUrl": "https://lcifs.suning.com/ifs/app/insBuy/validateUnderwrite.htm",
+"wapUrl": "https://lcifs.suning.com/ifs/app/insBuy/buyWap.htm"
+}
