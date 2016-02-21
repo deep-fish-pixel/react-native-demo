@@ -10,5 +10,7 @@
     2...
     
 效果
-https://github.com/maweimaweima/react-native-demo/asset/ios.gif
-https://github.com/maweimaweima/react-native-demo/asset/android.gif
+
+(https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
+
+(https://github.com/maweimaweima/react-native-demo/blob/master/asset/android.gif)
