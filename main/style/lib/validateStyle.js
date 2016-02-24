@@ -8,10 +8,10 @@ var styles = util.create({
     validateBox:{
         position: 'absolute',
         top:0,
-        backgroundColor:'rgba(0,0,0)',
+        backgroundColor:'rgba(0,0,0,0)',
     },
     validateBg: {
-        backgroundColor:'rgba(0,0,0)',
+        backgroundColor:'rgba(0,0,0,0)',
         position: 'absolute',
     },
     validateContent: {

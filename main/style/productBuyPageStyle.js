@@ -61,36 +61,54 @@ var styles = util.create(target, {
         color: '#ff5a00',
     },
     minCopies:{
-        height:40,
         width:40,
-        lineHeight:30,
         fontSize: 20,
         textAlign: 'center',
+        marginTop:5,
     },
     minCopiesBox:{
+        height:40,
         borderWidth: 1/util.ratio,
         borderColor: '#ddd',
         borderRightWidth: 0,
     },
     addCopies:{
-        height:40,
         width:40,
-        lineHeight:30,
         fontSize: 20,
         textAlign: 'center',
+        marginTop:5,
     },
     addCopiesBox:{
+        height:40,
         borderWidth: 1/util.ratio,
         borderColor: '#ddd',
         borderLeftWidth: 0,
     },
-    copies:{
-        height:41,
+    copiesBox:{
+        height:40,
         width:50,
-        lineHeight:32,
-        fontSize: 14,
         borderWidth: 1/util.ratio,
         borderColor: '#ddd',
+        alignSelf: 'center',
+        ...util.adaptorAndroid({
+            paddingLeft:4,
+        }),
+    },
+    copies:{
+        height:39,
+        ...util.adaptorAndroid({
+            width:50,
+        }),
+        fontSize: 14,
+        borderWidth:0,
+        ...util.adaptorIos({
+            textAlign: 'center',
+        }),
+    },
+    right:{
+        width:8,
+        height:12,
+        marginTop:3,
     },
 });
 

@@ -43,7 +43,7 @@ class Validate {
         realName: "姓名格式为汉字或“•”",
         idCard: "身份证号码不正确",
         userName: "请输入正确的身份证号"
-    }
+    };
     static types = {
         empty: {reg: /^[\S\s]+$/},
         minlength: {},
@@ -100,10 +100,10 @@ class Validate {
         userName: {
             reg: /(^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$)|(^1[0-9]{10}$)/
         }
-    }
-    static valideChange = "change"
-    static valideBlur = "blur"
-    static cache = {}
+    };
+    static valideChange = "change";
+    static valideBlur = "blur";
+    static cache = {};
 
     /**
      * 构造器

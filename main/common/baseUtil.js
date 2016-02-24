@@ -9,6 +9,8 @@ import React, {
 * */
 var window = Dimensions.get('window');
 var baseUtil = {
+    IOS:'ios',
+    ANDROID:'android',
     /*
     * Platform平台信息
     * */
@@ -23,6 +25,18 @@ var baseUtil = {
     windowSize: {
         width: window.width,
         height: window.height,
+    },
+    /*
+     * 是否是ios平台
+     * */
+    isIos: function () {
+        return this.IOS === this.platform;
+    },
+    /*
+     * 是否是android平台
+     * */
+    isAndroid: function () {
+        return this.ANDROID === this.platform;
     },
     /*
      * ratio屏幕的值

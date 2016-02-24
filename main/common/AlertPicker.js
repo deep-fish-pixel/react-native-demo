@@ -26,6 +26,7 @@ var AlertPicker = React.createClass({
     getDefaultProps() {
         return {
             data: [],
+            animateTime: 150,
         };
     },
     componentDidMount() {
@@ -35,6 +36,7 @@ var AlertPicker = React.createClass({
         var data = this.props.data;
         var event = this.getEvent()||{};
         var selectedIndex = this.state.selectedIndex;
+        setTimeout(()=>util.page.setScroll(!this.showFlag), this.props.animateTime);
         if(this.showFlag && this.state.animate){
             this.animateIn();
         }
@@ -63,7 +65,7 @@ var AlertPicker = React.createClass({
                     styles.pickerContent,
                     {
                         width:window.width-30,
-                        top: event.offsetY+event.height/2-206/2+(event.init?-20:44),
+                        top: event.offsetY+event.height/2-206/2+(event.init?-20:-44),
                     },
                     {transform:[
                          {scale: this.state.animateValue.interpolate({
@@ -125,7 +127,7 @@ var AlertPicker = React.createClass({
         Animated.sequence([
             Animated.timing(this.state.animateValue, {
                 toValue: 1,
-                duration: 200,
+                duration: this.props.animateTime,
             }),
         ]).start();
     },

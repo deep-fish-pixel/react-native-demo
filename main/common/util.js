@@ -6,6 +6,7 @@ import alertTip from './alertTip';
 import page from './pageUtil';
 import navigation from './nav/navigationManage';
 import config from './config';
+import style from './styleUtil';
 /*
 * 对外输出公共的工具库
 * */
@@ -42,5 +43,9 @@ var util = {
      * 公共配置项
      * */
     config,
+    /*
+     * 适配style模块
+     * */
+    ...style,
 };
 module.exports = util;

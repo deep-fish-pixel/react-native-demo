@@ -32,4 +32,4 @@ class projectTest extends Component {
 }
 
 
-AppRegistry.registerComponent('AwesomeProject', () => projectTest);
+AppRegistry.registerComponent('Test', () => projectTest);

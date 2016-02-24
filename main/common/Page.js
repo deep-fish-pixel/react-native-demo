@@ -6,12 +6,17 @@ import React, {
     View,
     Text,
     Dimensions,
+    Touchable,
+    RefreshControl,
     PullToRefreshViewAndroid,
 } from 'react-native';
+console.log(Touchable);
 var window = Dimensions.get('window');
 var styles = require('./../style/lib/commonStyle');
 var util = require('./../common/util');
 var Page = React.createClass({
+    mixins:[Touchable],
+
     getInitialState() {
         this.event = {
             offsetY: 0,
@@ -22,6 +27,8 @@ var Page = React.createClass({
         //滚动开关，默认打开
         this.scrollFlag = true;
         return {
+            scrollEnabled: true,
+            isRefreshing: false,
             pageLoadingAnimateValue: new Animated.Value(0),
         };
     },
@@ -32,19 +39,14 @@ var Page = React.createClass({
     },
     render: function() {
         util.page.setCurrentPage(this);
-        //检测loading元素
-        var loading = this.getLoading();
-        //是否需要滚动效果
-        var Element = this.isScroll()? ScrollView : View;
         //页面是否 有刷新功能并且是安卓平台的
-        var androidRefresh = this.props.onRefresh && util.platform=='android';
+        var refresh = !!this.props.onRefresh;
 
-        //封装android下拉刷新功能与ios调用相同
-        if(androidRefresh){
-            var refreshEndCallback = ()=>{
-                this.setState({isRefreshing: false});
-            }
+        //封装刷新功能
+        if(refresh){
+            var refreshEndCallback = ()=>this.setState({isRefreshing: false})
         }
+        var hasContent = util.alertTip.hasContent();
         return (
             /*
             * 属性配置说明
@@ -52,39 +54,31 @@ var Page = React.createClass({
             * onRefreshStart 配置是否有顶部下拉刷新功能
             * loading 配置页面加载中空页面是否 加载中图标提示
             * */
-            androidRefresh?
-                <PullToRefreshViewAndroid
-                    style={styles.pageScene}
-                    refreshing={this.state.isRefreshing||false}
-                    onRefresh={()=>{
-                        this.props.onRefresh(refreshEndCallback);
-                    }}
-                    colors={['#ff0000', '#00ff00', '#0000ff']}
-                    progressBackgroundColor={'#ffff00'}
-                    >
-                    <Element onScroll={this.onScroll}
-                             onRefreshStart={this.props.onRefresh}
-                             onMomentumScrollEnd={this.onMomentumScrollEnd}
-                             onScrollEndDrag={this.onScrollEndDrag}>
-                        <View>
-                            {loading}
-                            {this.props.children}
-                            {util.alertTip.render(this.event)}
-                        </View>
-                    </Element>
-                </PullToRefreshViewAndroid>
-                :
-                <Element onScroll={this.onScroll}
-                         onRefreshStart={this.props.onRefresh}
-                         onMomentumScrollEnd={this.onMomentumScrollEnd}
-                         onScrollEndDrag={this.onScrollEndDrag}
-                         style={styles.pageScene}>
-                    <View>
-                        {loading}
-                        {this.props.children}
-                        {util.alertTip.render(this.event)}
-                    </View>
-                </Element>
+            <ScrollView key="scrollViewRoot"
+                        onScroll={this.onScroll}
+                        refreshControl={
+                          refresh?<RefreshControl
+                            refreshing={this.state.isRefreshing}
+                            onRefresh={()=>{
+                                this.setState({isRefreshing: true});
+                                this.props.onRefresh(refreshEndCallback);
+                            }}
+                            tintColor="#ff0000"
+                            title="加载..."
+                            colors={['#ff0000', '#00ff00', '#0000ff']}
+                            progressBackgroundColor="#ffff00"
+                          />:null
+                        }
+                     onMomentumScrollEnd={this.onMomentumScrollEnd}
+                     onScrollEndDrag={this.onScrollEndDrag}
+                     scrollEnabled = {!hasContent && this.state.scrollEnabled}
+                     style={[styles.pageScene]}>
+                <View>
+                    {this.getLoading()}
+                    {this.props.children}
+                    {util.alertTip.render(this.event)}
+                </View>
+            </ScrollView>
         );
     },
     updateEvent: function (event) {

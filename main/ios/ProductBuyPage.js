@@ -26,6 +26,7 @@ var ProductBuyPage = React.createClass({
             },
             dataType: 'json',
             success: (data)=>{
+                console.log(React.Platform);
                 util.delay(()=>{
                     this.setState(data)
                 }, util.config.pageTransitionTime, start);
@@ -69,7 +70,7 @@ var ProductBuyPage = React.createClass({
         state.areas = ['北京', '南京'];
 
         return (!state.id?<Page loading={true}></Page>:
-            <Page ref="page" loading={true} validate={this.validate}>
+            <Page ref="page" loading={true} validate={this.validate}  onScroll={()=>{}}>
                 <View style={styles.item}>
 
                     <View>
@@ -98,7 +99,7 @@ var ProductBuyPage = React.createClass({
                         <View style={styles.flexBox}>
                             <View style={styles.flex}><Text style={styles.titleText}>产品详情</Text></View>
                             <View >
-                                <Image source={require('./../style/image/right.png')} style={[styles.right,{width:8,height:12}]} />
+                                <Image source={require('./../style/image/right.png')} style={[styles.right]} />
                             </View>
                         </View>
                     </View>
@@ -112,7 +113,7 @@ var ProductBuyPage = React.createClass({
                         <View style={styles.flex}><Text style={[styles.rate, styles.h3]}>{state.singleAmount}元</Text></View>
                         <View style={styles.flexBox}>
                             <TouchableHighlight style={styles.minCopiesBox} underlayColor="#d0d0d0" onPress={()=>{this.changeCopies(-1)}}><Text style={styles.minCopies}>-</Text></TouchableHighlight>
-                            <View><TextInput ref="copies" style={styles.copies}  value={state.startBuyCopies+''} onChangeText={(text)=>{this.state.startBuyCopies=text-0;this.changeCopies(0, true);}}/></View>
+                            <View style={styles.copiesBox}><TextInput ref="copies" style={styles.copies}  value={state.startBuyCopies+''} onChangeText={(text)=>{this.state.startBuyCopies=text-0;this.changeCopies(0, true);}}/></View>
                             <TouchableHighlight style={styles.addCopiesBox} underlayColor="#d0d0d0" onPress={()=>{this.changeCopies(1)}}><Text style={styles.addCopies}>+</Text></TouchableHighlight>
                         </View>
                     </View>

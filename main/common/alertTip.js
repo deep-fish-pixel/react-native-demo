@@ -35,6 +35,12 @@ var alertTip = {
         },2000);
     },
     /*
+    * 是否有提示内容
+    * */
+    hasContent:function(){
+        return this.msg;
+    },
+    /*
      * 提取消息
      * */
     render(event={}) {
@@ -45,14 +51,14 @@ var alertTip = {
         this.msg = null;
         this._animate();
         return (
-            <View style={styles.validateBox}>
+            <View style={[styles.validateBox,{width:event.width, height:event.contentHeight}]}>
                 <View style={[styles.validateBg, {width:window.width, height:event.contentHeight}]}></View>
                 <View style={[styles.flexBoxCenter, {width:window.width,}]}>
                     <View style={styles.flex}></View>
                     <Animated.View style={[
                     styles.validateContent,
                     {
-                        top: event.offsetY+event.height/2-30/2+(event.init?-20:44),
+                        top: event.offsetY+event.height/2-60,
                     },
                     {transform:[
                          {scale: this.animateValue.interpolate({
